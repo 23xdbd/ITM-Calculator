@@ -1,0 +1,31 @@
+public partial class Form1 : Form
+{
+    double Mass, Height, Result;
+    public Form1()
+    {
+        InitializeComponent();
+    }
+
+    private void label3_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void buttonCalculate_Click(object sender, EventArgs e)
+    {
+        Mass = double.Parse(textBoxMass.Text);
+        Height = double.Parse(textBoxHeight.Text);
+        if (Mass > 0 && Height > 0) 
+        { Result = Mass / (Height * Height); 
+         if (Result > 25) 
+        { labelResult.Text = ("Вашият ИТМ е: " + Math.Round(Result, 2) + " Вие сте с наднормено тегло, трябва да тренирате."); }
+        else if 
+            (Result < 18.5) { labelResult.Text = ("Вашият ИТМ е: " + Math.Round(Result, 2) + " Вие сте с поднормено тегло, яжте."); }
+        else 
+        { labelResult.Text = ("Вашият ИТМ е: " + Math.Round(Result, 2) + " Вие сте с нормално тегло."); }
+        }
+        else 
+        { labelResult.Text = ("ERROR!");  }
+       
+    }
+}
